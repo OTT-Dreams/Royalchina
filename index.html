@@ -34,7 +34,6 @@
     font-family: var(--font-sans);
     font-weight: 300;
     overflow-x: hidden;
-    max-width: 100vw;
     cursor: default;
   }
 
@@ -134,19 +133,14 @@
 
   /* ─── HERO ─── */
   .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    max-height: 100svh;
-    width: 100%;
+    position: relative; height: 100vh; min-height: 700px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
   .hero-bg {
     position: absolute; inset: 0;
     background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&q=85');
-    background-size: cover; background-position: center; background-repeat: no-repeat;
-    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
     transform: scale(1.08);
     transition: transform 8s ease;
   }
@@ -167,10 +161,8 @@
   }
   .hero-content {
     position: relative; z-index: 2;
-    text-align: center;
-    padding: 0 1.5rem;
+    text-align: center; padding: 0 2rem;
     max-width: 860px;
-    width: 100%;
   }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.75rem;
@@ -239,8 +231,6 @@
     border-bottom: 1px solid var(--gold-border);
     padding: 1.5rem 4rem;
     display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;
-    width: 100%;
-    overflow: hidden;
   }
   .stat {
     display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
@@ -280,7 +270,6 @@
   }
   .about-visual {
     position: relative;
-    overflow: visible;
   }
   .about-img-main {
     width: 100%; aspect-ratio: 3/4;
@@ -684,114 +673,31 @@
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
   @media (max-width: 768px) {
-    nav { padding: 0 1.25rem; }
+    nav { padding: 0 1.5rem; }
     .nav-links, .nav-cta { display: none; }
     .hamburger { display: flex; }
-
-    section { padding: 3.5rem 1.25rem; }
-
-    /* Hero mobile fix */
-    .hero {
-      height: 100svh;
-      min-height: 500px;
-    }
-    .hero-content {
-      padding: 0 1.25rem;
-      width: 100%;
-    }
-    .hero-title {
-      font-size: clamp(2.4rem, 9vw, 3.5rem);
-      word-break: break-word;
-    }
-    .hero-desc { display: none; }
-    .hero-actions {
-      gap: 0.75rem;
-      margin-top: 1.75rem;
-    }
-    .btn-gold, .btn-outline {
-      padding: 0.8rem 1.5rem;
-      font-size: 0.68rem;
-    }
-    .hero-tag {
-      font-size: 0.6rem;
-      margin-bottom: 1.25rem;
-    }
-
-    /* Stats bar */
-    .stats-bar { padding: 1.25rem 1rem; gap: 0.75rem; }
+    section { padding: 4rem 1.5rem; }
+    .stats-bar { padding: 1.5rem; gap: 1rem; }
     .stat-divider { display: none; }
-    .stat-num { font-size: 1.6rem; }
-
-    /* Award banner */
-    .award-banner { padding: 2.5rem 1.25rem; gap: 2rem; }
-
-    /* Dishes & categories */
+    .award-banner { padding: 2.5rem 1.5rem; gap: 2rem; }
     .dishes-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-
-    /* Testimonials */
     .test-grid { grid-template-columns: 1fr; }
-
-    /* Contact section */
-    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .contact-info h2 { font-size: 2.2rem; }
-    .timings { margin-top: 1.5rem; }
-    .timing-row { font-size: 0.78rem; flex-wrap: wrap; gap: 0.25rem; }
-
-    /* Form */
-    .form-row { grid-template-columns: 1fr; }
-
-    /* Footer */
-    footer { padding: 3rem 1.25rem; }
+    .footer { padding: 3rem 1.5rem; }
+    footer { padding: 3rem 1.5rem; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
-
-    /* Tabs */
-    .tabs { overflow-x: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
-    .tab { padding: 0.9rem 1.75rem; white-space: nowrap; }
-
-    /* About */
-    .about-img-accent { right: 0; bottom: -1rem; }
-    .about-badge { left: 0; }
-
-    /* Section titles */
-    .section-title { font-size: clamp(2rem, 7vw, 3rem); }
+    .tabs { overflow-x: auto; justify-content: flex-start; }
+    .hero-desc { display: none; }
   }
   @media (max-width: 480px) {
-    section { padding: 3rem 1rem; }
-
-    .hero-title { font-size: clamp(2rem, 10vw, 2.8rem); }
-    .hero-actions { flex-direction: column; align-items: stretch; }
-    .btn-gold, .btn-outline { width: 100%; justify-content: center; }
-
+    .hero-title { font-size: 3rem; }
     .dishes-grid { grid-template-columns: 1fr; }
     .categories-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
-
-    /* Stats single row wrap */
-    .stats-bar { flex-wrap: wrap; justify-content: center; gap: 1.25rem 2rem; }
-    .stat { min-width: 70px; }
-
-    /* Contact */
-    .contact-info h2 { font-size: 1.9rem; }
-    .info-text strong { font-size: 0.85rem; }
-
-    /* Award */
-    .award-banner { flex-direction: column; gap: 1.5rem; }
-    .award-text h3 { font-size: 1.5rem; }
-
-    /* Nav logo */
-    .nav-logo { font-size: 1.25rem; }
-
-    /* Footer */
-    footer { padding: 2.5rem 1rem; }
-    .footer-brand .logo { font-size: 1.3rem; }
-  }
-  @media (max-width: 360px) {
-    .hero-title { font-size: 1.9rem; }
-    .hero-tag { font-size: 0.55rem; letter-spacing: 0.2em; }
-    .hero-tag::before, .hero-tag::after { width: 16px; }
-    section { padding: 2.5rem 0.875rem; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .btn-gold, .btn-outline { width: 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -1320,7 +1226,7 @@
         </div>
         <div class="info-text">
           <p>Email</p>
-          <strong><a href="/cdn-cgi/l/email-protection#37515845425a7745584e565b545f5e59565c585b5c5643561954585a"><span class="__cf_email__" data-cfemail="40262f32352d00322f39212c2328292e212b2f2c2b2134216e232f2d">[email&#160;protected]</span></a></strong>
+          <strong><a href="mailto:forum@royalchinakolkata.com">forum@royalchinakolkata.com</a></strong>
         </div>
       </div>
       <div class="timings reveal">
@@ -1454,7 +1360,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // ─── NAV SCROLL ───
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1509,4 +1415,11 @@
     btn.style.background = '#2d6a2d';
     btn.style.color = '#fff';
     setTimeout(() => {
-      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" st
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Confirm Reservation';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
